@@ -1,34 +1,25 @@
-import { on } from 'cluster'
-import React, { useState } from 'react'
+// import { on } from 'cluster'
+import React, { useState, useEffect } from 'react'
 import { FetchedItemType } from '../types/item'
 interface Props {}
 
-const fetchFakeData = () => {
-  fetch('https://fakestoreapi.com/products/')
-    .then(res => res.json())
-    .then(json => console.log(json))
+const fetchFakeData = async (): Promise<void | FetchedItemType[]> => {
+  return fetch('https://fakestoreapi.com/products/').then(res => res.json())
 }
-
 const FetchedCart = (props: Props) => {
   const [fakeItem, setFakeItem] = useState<FetchedItemType[]>([])
-  //   const onClickHandler:()=>FetchedItemType[] = () => {
-  //     const fetchedData: FetchedItemType[] =  fetchFakeData()
-  //     setFakeItem(fetchedData)
-  //     console.log(fakeItem)
-  //   }
 
-  const onClickHandler = () => {
-    fetchFakeData()
-  }
+  useEffect(() => {
+    ;(async () => {
+      const data = await fetchFakeData()
+      setFakeItem(data as FetchedItemType[])
+    })()
+  }, [])
+
+  console.log(fakeItem)
   return (
     <div>
-      <button
-        onClick={() => {
-          onClickHandler()
-        }}
-      >
-        fetch data and log
-      </button>
+      <button>fetch data and log</button> 
     </div>
   )
 }
