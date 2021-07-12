@@ -21,6 +21,11 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-  ]
+    "src",
+
+  ],"typeRoots": ["src/types/*"],
+  "paths":{
+    "*":["src/types/*"]
+  }
 }
+//cerca include d.ts
