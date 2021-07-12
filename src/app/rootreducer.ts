@@ -1,7 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit'
-
-const rootReducer = combineReducers({
-
+import shopSlice from '../features/shopSlice'
+export const rootReducer = combineReducers({
+    shopItemList: shopSlice
 })
 
 export type RootState = ReturnType<typeof rootReducer>

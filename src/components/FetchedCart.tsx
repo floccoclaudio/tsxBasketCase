@@ -18,9 +18,13 @@ const FetchedCart = (props: Props) => {
 
   console.log(fakeItem)
   return (
-    <div>
-      <button>fetch data and log</button> 
-    </div>
+    <>
+      <header>Fetched Cart Items Component</header>
+      <div>
+        <button>fetch data and log</button>
+      </div>
+      <hr />
+    </>
   )
 }
 
