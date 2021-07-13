@@ -34,6 +34,7 @@ const Navbar = () => {
       <StyledLink to="/hardCodedShop">hard-coded Shop</StyledLink>
       <StyledLink to="/usingFetch">Fetch it</StyledLink>
       <StyledLink to="/usingToolkit">Read it from Redux</StyledLink>
+      <StyledLink to="/asyncThunk">useEffect here</StyledLink>
     </StyledNavBar>
   )
 }

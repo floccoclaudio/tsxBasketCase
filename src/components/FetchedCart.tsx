@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { FetchedItemType } from '../types/item'
 interface Props {}
 
-const fetchFakeData = async (): Promise<void | FetchedItemType[]> => {
+const fetchFakeData = async (): Promise<FetchedItemType[]> => {
   return fetch('https://fakestoreapi.com/products/').then(res => res.json())
 }
 
@@ -12,7 +12,7 @@ const FetchedCart = (props: Props) => {
   useEffect(() => {
     ;(async () => {
       const data = await fetchFakeData()
-      setFakeItem(data as FetchedItemType[])
+      setFakeItem(data)
     })()
   }, [])
 
