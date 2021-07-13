@@ -6,6 +6,7 @@ import ToolkitShop from './ToolkitShop'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
 import Navbar from './Navbar'
+import AsyncThunkEffect from './AsyncThunkEffect'
 
 //#region inventory coded
 export const inventory: Item[] = [
@@ -35,21 +36,14 @@ export const inventory: Item[] = [
   },
 ]
 //#endregion
-//#region  styled components
 
+//#region  styled components
 const StyledPageContainer = styled('div')`
   /* color: white; */
   width: 95vw;
   margin: 0 auto;
   padding: 2vh 5vh 0vh 5vh;
 `
-// const StyledLogo = styled('div')`
-//   display: block;
-//   width: 5vw;
-//   height: 5vw;
-//   border: 1px solid #2ec4b6;
-//   margin: 0 auto;
-// `
 
 const StyledAppSeparator = styled('div')`
   border-bottom: 1px solid #2ec4b6;
@@ -57,6 +51,7 @@ const StyledAppSeparator = styled('div')`
   margin: 5vh auto;
 `
 //#endregion
+
 const App: React.FC = () => {
   return (
     <BrowserRouter>
@@ -75,6 +70,9 @@ const App: React.FC = () => {
           </Route>
           <Route path="/usingToolkit">
             <ToolkitShop />
+          </Route>
+          <Route path="/asyncThunk">
+            <AsyncThunkEffect />
           </Route>
           <Route path="*">Page not found sorry</Route>
         </Switch>

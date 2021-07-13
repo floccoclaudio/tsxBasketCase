@@ -1,8 +1,6 @@
 import Item from '../types/item'
 import { createSlice } from '@reduxjs/toolkit'
 
-
-
 interface InitialShopStateType {
     inventory: Item[]
 }
@@ -36,12 +34,10 @@ const initialShopState: InitialShopStateType = {
     ]
 }
 
-
 const shopSlice = createSlice({
     name: 'shop',
     initialState: initialShopState,
     reducers: {
-
     }
 })
 
