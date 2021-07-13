@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+
 //#region styled components
 const StyledLink = styled(Link)`
   box-shadow: 0px 10px 14px -7px #276873;
@@ -26,6 +27,7 @@ const StyledNavBar = styled.nav`
   background-color: #011627;
 `
 //#endregion
+
 const Navbar = () => {
   return (
     <StyledNavBar>

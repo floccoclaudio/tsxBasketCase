@@ -1,9 +1,10 @@
 import React from 'react'
 import { useAppSelector, useAppDispatch } from '../app/hooks'
 import { addToCart } from '../features/cartSlice'
-interface Props {}
+import ItemCard from './ItemCard'
+// interface Props {}
 
-const ToolkitShop: React.FC = (props: Props) => {
+const ToolkitShop: React.FC = () => {
   const dispatch = useAppDispatch()
   const inventoryAgain = useAppSelector(state => state.shopItemList.inventory)
 
@@ -14,10 +15,7 @@ const ToolkitShop: React.FC = (props: Props) => {
         {inventoryAgain.map(item => {
           return (
             <li key={item.id}>
-              {item.label}
-              <button onClick={() => dispatch(addToCart(item))}>
-                Add to cart
-              </button>
+              <ItemCard />
             </li>
           )
         })}

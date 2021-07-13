@@ -6,9 +6,9 @@ interface Props {}
 const fetchFakeData = async (): Promise<void | FetchedItemType[]> => {
   return fetch('https://fakestoreapi.com/products/').then(res => res.json())
 }
+
 const FetchedCart = (props: Props) => {
   const [fakeItem, setFakeItem] = useState<FetchedItemType[]>([])
-
   useEffect(() => {
     ;(async () => {
       const data = await fetchFakeData()
@@ -16,7 +16,6 @@ const FetchedCart = (props: Props) => {
     })()
   }, [])
 
-  console.log(fakeItem)
   return (
     <>
       <header>Fetched Cart Items Component</header>

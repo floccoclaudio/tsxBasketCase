@@ -9,7 +9,6 @@ const cartInitialState: CartInitialStateType = {
     cart: []
 }
 
-
 const cartSlice = createSlice({
     name: 'cart',
     initialState: cartInitialState,
