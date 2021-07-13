@@ -6,6 +6,7 @@ import ToolkitShop from './ToolkitShop'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
 import Navbar from './Navbar'
+import AsyncThunkEffect from './AsyncThunkEffect'
 
 //#region inventory coded
 export const inventory: Item[] = [
@@ -69,6 +70,9 @@ const App: React.FC = () => {
           </Route>
           <Route path="/usingToolkit">
             <ToolkitShop />
+          </Route>
+          <Route path="/asyncThunk">
+            <AsyncThunkEffect />
           </Route>
           <Route path="*">Page not found sorry</Route>
         </Switch>
